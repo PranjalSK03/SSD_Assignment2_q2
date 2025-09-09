@@ -2,7 +2,7 @@
 :root {
   --bg: #e6f2fd;
   --card: #ffffff;
-  --muted: #6b7280;
+  --muted: #b1b9ca;
   --accent: #a2cbde;
   --accent-dark: #0369a1;
   --border: #e6eef8;
@@ -34,7 +34,7 @@ body {
 .site-header {
   background: linear-gradient(90deg, #04263b 0%, #063447 100%);
   color: white;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1000;
   box-shadow: 0 6px 18px rgba(2, 6, 23, 0.25)
