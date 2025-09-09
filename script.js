@@ -1,10 +1,3 @@
-/* script.js */
-/* 1) 
-   2) 
-   3) Smooth scrolling for anchor links
-   4) Toggle sections for easier navigation
-   5) Mobile nav toggle and back-to-top button
-*/
 
 document.addEventListener('DOMContentLoaded', function () {
   // 1) Last Modified - Last modified formatted and injected into #lastUpdated
@@ -53,16 +46,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // 5) nav toggle (hide and shwo)
-  const navToggle = document.getElementById('navToggle');
-  if (navToggle) {
-    navToggle.addEventListener('click', function () {
-      const links = document.querySelector('.nav-links');
-      if (!links) return;
-      const isVisible = links.style.display === 'flex';
-      links.style.display = isVisible ? 'none' : 'flex';
-    });
-  }
+  // 5) nav toggle (when tab becomes small then can toggle nav links)
+  const navLinks = document.querySelector('.nav-links');
+  navToggle.addEventListener('click', function () {
+      if (!navLinks) return;
+      navLinks.classList.toggle('active');
+
+      // optional: change link colors for mobile
+      const listItems = navLinks.querySelectorAll("li a");
+      listItems.forEach(item => item.style.color = 'black');
+  });
+
+  window.addEventListener('resize', function () {
+      if (window.innerWidth > 900) {
+          navLinks.classList.remove('active');
+          const listItems = navLinks.querySelectorAll("li a");
+          listItems.forEach(item => item.style.color = 'white');
+      }
+  });
 
   // 6) Back to top button function
   document.querySelectorAll('.toTop').forEach(function (btn) {

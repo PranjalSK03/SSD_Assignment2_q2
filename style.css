@@ -130,12 +130,13 @@ a:hover {
   align-items: center;
   margin: 10px 0;
   font-size: 0.95rem;
-  color: var(--muted)
+  color: black
 }
 
 .clock {
   font-weight: 600;
   margin-right: 12px
+
 }
 
 .last-updated {
@@ -242,6 +243,11 @@ table thead th {
   color: white;
 }
 
+.nav-links {
+  display: flex; /* default for large screens */
+  transition: all 0.3s ease;
+}
+
 
 /* Responsive */
 @media (max-width:900px) {
@@ -256,10 +262,15 @@ table thead th {
     position: absolute;
     right: 16px;
     top: 60px;
-    background: rgba(255, 255, 255, 0.98);
+    background: var(--accent);
     padding: 10px;
     border-radius: 10px;
-    box-shadow: var(--shadow)
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 
   .nav-toggle {
