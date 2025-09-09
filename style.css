@@ -1,0 +1,274 @@
+/* Basic theme & typography */
+:root {
+  --bg: #e6f2fd;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #a2cbde;
+  --accent-dark: #0369a1;
+  --border: #e6eef8;
+  --table-hr: #d0cbcb;
+  --shadow: 0 8px 24px rgba(6, 9, 22, 0.06);
+}
+
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Quicksand', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  background: var(--bg);
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased
+}
+
+.container {
+  max-width: 1100px;
+  margin: 18px auto;
+  padding: 16px
+}
+
+/* Header */
+.site-header {
+  background: linear-gradient(90deg, #04263b 0%, #063447 100%);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.25)
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 18px
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600
+}
+
+.brand .sub {
+  font-size: 0.85rem;
+  opacity: 0.9
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;      /* center all text */
+  padding: 18px 10px;
+  background: #04263b;     /* dark footer (optional) */
+  color: white;
+  border-top: 2px solid var(--border);
+}
+
+.site-footer a {
+  color: #9bd4ff;          /* footer links light blue */
+  text-decoration: none;
+}
+
+.site-footer .credits {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #d1d5db;
+}
+
+/* Top nav */
+.top-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center
+}
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: white;
+  padding: 6px 8px;
+  border-radius: 8px;
+  margin-right: 8px
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 12px
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem
+}
+
+.nav-links a:hover {
+  text-decoration: underline
+}
+
+/* Meta row */
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 0.95rem;
+  color: var(--muted)
+}
+
+.clock {
+  font-weight: 600;
+  margin-right: 12px
+}
+
+.last-updated {
+  color: var(--muted);
+  font-size: 0.9rem
+}
+
+/* Cards & sections */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow)
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.55rem
+}
+
+.section-header .toggle-section {
+  background: transparent;
+  border: 0;
+  font-size: 1rem;
+  cursor: pointer
+}
+
+.section-body {
+  margin-top: 10px;
+  color: #07304a;
+  line-height: 1.45
+}
+
+/* Tables responsive wrapper */
+.table-wrapper {
+  overflow: auto
+}
+
+table {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid var(--table-hr);
+  border-collapse: collapse
+}
+
+table th,
+table td {
+  padding: 9px;
+  border: 2px solid var(--table-hr);
+  text-align: left;
+  font-size: 0.95rem
+}
+
+table thead th {
+  background: var(--accent);
+  font-weight: 600;
+  color: #0f172a
+}
+
+.table-sm td,
+.table-sm th {
+  padding: 6px
+}
+
+/* Small visual tweaks */
+.footer-note {
+  font-size: 0.95rem
+}
+
+.credits {
+  font-size: 0.9rem;
+  color: var(--muted)
+}
+
+.muted {
+  color: var(--muted)
+}
+
+/* Back to top button */
+.back-to-top {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px
+}
+
+.toTop {
+  background: transparent;
+  color: var(--accent-dark);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 2px solid var(--accent);
+  cursor: pointer
+}
+
+.toTop:hover{
+  background: var(--accent-dark);
+  color: white;
+}
+
+
+/* Links */
+a {
+  color: var(--accent-dark)
+}
+a:hover {
+  text-decoration: underline
+}
+
+
+/* Responsive */
+@media (max-width:900px) {
+  .header-inner {
+    flex-direction: row;
+    gap: 10px
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 16px;
+    top: 60px;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: var(--shadow)
+  }
+
+  .nav-toggle {
+    display: inline-block
+  }
+
+  .container {
+    padding: 12px
+  }
+}
