@@ -1,4 +1,4 @@
-/* Basic theme & typography */
+/* my colors an theme*/
 :root {
   --bg: #e6f2fd;
   --card: #ffffff;
@@ -10,7 +10,7 @@
   --shadow: 0 8px 24px rgba(6, 9, 22, 0.06);
 }
 
-* {
+*{
   box-sizing: border-box
 }
 
@@ -30,11 +30,20 @@ body {
   padding: 16px
 }
 
+
+/* Links */
+a {
+  color: var(--accent-dark)
+}
+a:hover {
+  text-decoration: underline
+}
+
 /* Header */
 .site-header {
   background: linear-gradient(90deg, #04263b 0%, #063447 100%);
   color: white;
-  position: fixed;
+  position: static;
   top: 0;
   z-index: 1000;
   box-shadow: 0 6px 18px rgba(2, 6, 23, 0.25)
@@ -60,15 +69,15 @@ body {
 
 /* Footer */
 .site-footer {
-  text-align: center;      /* center all text */
+  text-align: center;      
   padding: 18px 10px;
-  background: #04263b;     /* dark footer (optional) */
+  background: #04263b;    
   color: white;
   border-top: 2px solid var(--border);
 }
 
 .site-footer a {
-  color: #9bd4ff;          /* footer links light blue */
+  color: #9bd4ff;
   text-decoration: none;
 }
 
@@ -168,7 +177,7 @@ body {
   line-height: 1.45
 }
 
-/* Tables responsive wrapper */
+/* to make table responsive */
 .table-wrapper {
   overflow: auto
 }
@@ -200,16 +209,14 @@ table thead th {
   padding: 6px
 }
 
-/* Small visual tweaks */
+/* helper classes */
 .footer-note {
   font-size: 0.95rem
 }
-
 .credits {
   font-size: 0.9rem;
   color: var(--muted)
 }
-
 .muted {
   color: var(--muted)
 }
@@ -233,15 +240,6 @@ table thead th {
 .toTop:hover{
   background: var(--accent-dark);
   color: white;
-}
-
-
-/* Links */
-a {
-  color: var(--accent-dark)
-}
-a:hover {
-  text-decoration: underline
 }
 
 

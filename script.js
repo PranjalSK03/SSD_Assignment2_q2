@@ -1,13 +1,13 @@
 /* script.js */
-/* 1) Last modified formatted and injected into #lastUpdated
-   2) startTime() updates #clock every second
+/* 1) 
+   2) 
    3) Smooth scrolling for anchor links
    4) Toggle sections for easier navigation
    5) Mobile nav toggle and back-to-top button
 */
 
 document.addEventListener('DOMContentLoaded', function () {
-  // 1) Last Modified
+  // 1) Last Modified - Last modified formatted and injected into #lastUpdated
   try {
     const lastModified = new Date(document.lastModified || Date.now());
     const formattedDate = lastModified.toLocaleString('en-US', {
@@ -25,10 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
     console.warn("Error setting last modified:", e);
   }
 
-  // 2) start clock
+  // 2) start clock - to update time each time
   startTime();
 
-  // 3) Smooth scroll for internal links
+  // 3) for smooth scroll for internal links
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (ev) {
       const href = this.getAttribute('href');
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // 4) Section toggles
+  // 4) Section toggles (hide and show sections)
   document.querySelectorAll('.toggle-section').forEach(function (btn) {
     btn.addEventListener('click', function () {
       const target = document.querySelector(this.dataset.target);
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // 5) mobile nav toggle
+  // 5) nav toggle (hide and shwo)
   const navToggle = document.getElementById('navToggle');
   if (navToggle) {
     navToggle.addEventListener('click', function () {
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // 6) Back to top
+  // 6) Back to top button function
   document.querySelectorAll('.toTop').forEach(function (btn) {
     btn.addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -72,7 +72,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-/* Clock implementation */
+
+
+// Clock function to show current time in header
 function startTime() {
   const today = new Date();
   let h = today.getHours();
